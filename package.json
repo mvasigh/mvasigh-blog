@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "mvasigh.dev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Personal website for Mehdi Vasigh's software development projects",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Mehdi Vasigh <mehdi.vasigh@gmail.com>",
   "dependencies": {
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
@@ -19,7 +19,9 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "husky": "^2.3.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0"
   },
   "keywords": [
     "gatsby"
@@ -32,6 +34,11 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "repository": {
     "type": "git",
