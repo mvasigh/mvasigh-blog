@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles';
 import Header from './Header';
+import DotGrid from './DotGrid';
 import theme from '../styles/theme';
 
 const Layout = ({ children }) => (
@@ -29,6 +30,7 @@ const Layout = ({ children }) => (
         <>
           <GlobalStyles />
           <Header siteTitle={data.site.siteMetadata.title} />
+          <DotGrid />
           <div
             style={{
               margin: `0 auto`,
