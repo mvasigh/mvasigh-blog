@@ -20,7 +20,8 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-spring": "^8.0.20",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "typeface-muli": "^0.0.71"
   },
   "devDependencies": {
     "husky": "^2.3.0",

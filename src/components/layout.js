@@ -8,9 +8,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-
+import GlobalStyles from '../styles/GlobalStyles';
 import Header from './Header';
-import './layout.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,6 +24,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <GlobalStyles />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
