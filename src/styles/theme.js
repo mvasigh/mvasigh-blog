@@ -11,10 +11,10 @@ const theme = {
   }
 };
 
-theme.palette.background = theme.palette.greyscale.black;
+theme.palette.background = theme.palette.greyscale.white;
 theme.palette.text = {
-  primary: [...theme.palette.greyscale.white, 1],
-  secondary: [...theme.palette.greyscale.white, 0.8]
+  primary: [...theme.palette.greyscale.black, 1],
+  secondary: [...theme.palette.greyscale.black, 0.8]
 };
 
 export default theme;
