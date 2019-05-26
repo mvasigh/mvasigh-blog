@@ -12,8 +12,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Muli', 'Montserrat', sans-serif;
   }
 
-  html,
-  body {
+  html {
     background-color: ${({ theme }) => toHslString(theme.palette.background)};
     color: ${({ theme }) => toHslaString(theme.palette.text.primary)};
   }
