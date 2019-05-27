@@ -14,10 +14,10 @@ const StyledNavbar = styled.nav`
   }
 
   ${media.desktop`
-    padding-top: ${({ theme }) => theme.spacing.multiple(4)};
-    padding-bottom: ${({ theme }) => theme.spacing.multiple(4)};
-    padding-left: ${({ theme }) => theme.spacing.multiple(8)};
-    padding-right: ${({ theme }) => theme.spacing.multiple(8)};
+    padding-top: ${({ theme }) => theme.spacing.multiple(3)};
+    padding-bottom: ${({ theme }) => theme.spacing.multiple(3)};
+    padding-left: ${({ theme }) => theme.spacing.multiple(6)};
+    padding-right: ${({ theme }) => theme.spacing.multiple(6)};
   `}
 `;
 
@@ -25,16 +25,14 @@ const Menu = styled.ul`
   list-style-type: none;
   li {
     display: inline-block;
-    font-weight: 900;
     font-size: 1.2rem;
-    text-transform: uppercase;
 
     a {
       text-decoration: none;
     }
 
     &:not(:last-child) {
-      margin-right: ${({ theme }) => theme.spacing.multiple(6)};
+      margin-right: ${({ theme }) => theme.spacing.multiple(4)};
     }
   }
 `;
