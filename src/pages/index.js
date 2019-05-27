@@ -1,12 +1,8 @@
 import React from 'react';
-import { Layout } from '@components';
+// import { Layout } from '@components';
 
 const Home = () => {
-  return (
-    <Layout>
-      <span>hello world</span>
-    </Layout>
-  );
+  return <span>hello world</span>;
 };
 
 export default Home;
