@@ -5,7 +5,7 @@
 const theme = {
   palette: {
     greyscale: {
-      black: [0, 0, 15],
+      black: [0, 0, 8],
       white: [0, 0, 98]
     }
   },

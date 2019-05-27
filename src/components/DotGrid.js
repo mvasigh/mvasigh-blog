@@ -1,12 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
 import { throttle } from 'throttle-debounce';
+import { toHslString } from '@libs/color';
 
 const cx = (x, y) => x;
 const cy = (x, y) => y;
 
-const CIRCLE_RADIUS = 350;
+const CIRCLE_RADIUS = 600;
 
 const Layer = styled.div`
   width: 100vw;
@@ -18,7 +19,8 @@ const Layer = styled.div`
   overflow: hidden;
 `;
 
-const DotGrid = () => {
+const DotGrid = ({ theme }) => {
+  console.log(theme);
   const layerRef = useRef();
   const [dimensions, setDimensions] = useState(null);
   const [props, set] = useSpring(() => ({
@@ -47,17 +49,18 @@ const DotGrid = () => {
           width={dimensions[0]}
           height={dimensions[1]}
           xmlns="http://www.w3.org/2000/svg"
+          opacity="0.15"
         >
           <defs>
             <filter id="blur">
               <feGaussianBlur stdDeviation="0.6" />
             </filter>
             <filter id="dilate">
-              <feMorphology operator="dilate" radius="1" />
+              <feMorphology operator="dilate" radius="1.1" />
             </filter>
             <radialGradient id="hoverGradient">
               <stop offset="10%" stopColor="#bbb" />
-              <stop offset="40%" stopColor="#222" />
+              <stop offset="30%" stopColor="#555" />
               <stop offset="100%" stopColor="#000" />
             </radialGradient>
             <animated.mask id="hoverMask">
@@ -75,14 +78,19 @@ const DotGrid = () => {
               width={25 / dimensions[0]}
               height={25 / dimensions[1]}
             >
-              <rect width="2" height="2" x="0" y="0" fill="black" />
+              <rect
+                width="1.5"
+                height="1.5"
+                x="15"
+                y="15"
+                fill={toHslString(theme.palette.text.primary)}
+              />
             </pattern>
           </defs>
           <rect
             width={dimensions[0]}
             height={dimensions[1]}
             fill="url(#dots)"
-            opacity="0.1"
             filter="url(#blur)"
           />
           <rect
@@ -91,7 +99,6 @@ const DotGrid = () => {
             fill="url(#dots)"
             mask="url(#hoverMask)"
             filter="url(#dilate)"
-            opacity="0.15"
           />
         </animated.svg>
       )}
@@ -99,4 +106,4 @@ const DotGrid = () => {
   );
 };
 
-export default DotGrid;
+export default withTheme(DotGrid);
