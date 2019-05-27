@@ -9,10 +9,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from '../styles/GlobalStyles';
-import Navbar from './Navbar';
-import DotGrid from './DotGrid';
-import theme from '../styles/theme';
+import GlobalStyles from '@styles/GlobalStyles';
+import Navbar from '@components/Navbar';
+import DotGrid from '@components/DotGrid';
+import theme from '@styles/theme';
 
 const Layout = ({ children }) => (
   <StaticQuery

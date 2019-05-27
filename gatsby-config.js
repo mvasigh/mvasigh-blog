@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Mehdi Vasigh`,
@@ -12,6 +14,18 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@libs': path.resolve(__dirname, 'src/libs'),
+          '@styles': path.resolve(__dirname, 'src/styles'),
+          '@images': path.resolve(__dirname, 'src/images')
+        },
+        extensions: []
       }
     },
     `gatsby-transformer-sharp`,

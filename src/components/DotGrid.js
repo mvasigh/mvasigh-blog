@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
+import { throttle } from 'throttle-debounce';
 
 const cx = (x, y) => x;
 const cy = (x, y) => y;
@@ -25,7 +26,9 @@ const DotGrid = () => {
     config: config.stiff
   }));
 
-  const handleMouseMove = e => set({ xy: [e.clientX, e.clientY] });
+  const handleMouseMove = throttle(200, e =>
+    set({ xy: [e.clientX, e.clientY] })
+  );
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
@@ -69,8 +72,8 @@ const DotGrid = () => {
               id="dots"
               x="0"
               y="0"
-              width={30 / dimensions[0]}
-              height={30 / dimensions[1]}
+              width={25 / dimensions[0]}
+              height={25 / dimensions[1]}
             >
               <rect width="2" height="2" x="0" y="0" fill="black" />
             </pattern>
