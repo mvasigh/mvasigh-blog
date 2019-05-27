@@ -5,6 +5,8 @@ import { useSpring, animated, config } from 'react-spring';
 const cx = (x, y) => x;
 const cy = (x, y) => y;
 
+const CIRCLE_RADIUS = 350;
+
 const Layer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -23,16 +25,20 @@ const DotGrid = () => {
     config: config.stiff
   }));
 
+  const handleMouseMove = e => set({ xy: [e.clientX, e.clientY] });
+
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  });
+
   useEffect(() => {
     const { clientWidth, clientHeight } = layerRef.current;
     setDimensions([clientWidth, clientHeight]);
   }, []);
 
   return (
-    <Layer
-      ref={layerRef}
-      onMouseMove={e => set({ xy: [e.clientX, e.clientY] })}
-    >
+    <Layer ref={layerRef}>
       {dimensions && (
         <animated.svg
           width={dimensions[0]}
@@ -43,16 +49,19 @@ const DotGrid = () => {
             <filter id="blur">
               <feGaussianBlur stdDeviation="0.6" />
             </filter>
+            <filter id="dilate">
+              <feMorphology operator="dilate" radius="1" />
+            </filter>
             <radialGradient id="hoverGradient">
               <stop offset="10%" stopColor="#bbb" />
-              <stop offset="40%" stopColor="#bbb" />
-              <stop offset="100%" stopColor="#333" />
+              <stop offset="40%" stopColor="#222" />
+              <stop offset="100%" stopColor="#000" />
             </radialGradient>
             <animated.mask id="hoverMask">
               <animated.circle
                 cx={props.xy.interpolate(cx)}
                 cy={props.xy.interpolate(cy)}
-                r="200"
+                r={CIRCLE_RADIUS}
                 fill="url(#hoverGradient)"
               />
             </animated.mask>
@@ -60,8 +69,8 @@ const DotGrid = () => {
               id="dots"
               x="0"
               y="0"
-              width={20 / dimensions[0]}
-              height={20 / dimensions[1]}
+              width={30 / dimensions[0]}
+              height={30 / dimensions[1]}
             >
               <rect width="2" height="2" x="0" y="0" fill="black" />
             </pattern>
@@ -70,7 +79,7 @@ const DotGrid = () => {
             width={dimensions[0]}
             height={dimensions[1]}
             fill="url(#dots)"
-            opacity="0.075"
+            opacity="0.1"
             filter="url(#blur)"
           />
           <rect
@@ -78,7 +87,8 @@ const DotGrid = () => {
             height={dimensions[1]}
             fill="url(#dots)"
             mask="url(#hoverMask)"
-            opacity="0.175"
+            filter="url(#dilate)"
+            opacity="0.15"
           />
         </animated.svg>
       )}
