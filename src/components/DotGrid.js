@@ -4,13 +4,13 @@ import { useSpring, animated, config } from 'react-spring';
 import { throttle } from 'throttle-debounce';
 import { toHslString } from '@libs/color';
 
+const CIRCLE_RADIUS = 600;
+
 const cx = (x, y) => x;
 const cy = (x, y) => y;
 
 const width = (w, h) => 20 / w;
 const height = (w, h) => 20 / h;
-
-const CIRCLE_RADIUS = 600;
 
 const StyledSvg = styled(animated.svg)`
   width: 100vw;
@@ -27,7 +27,7 @@ const DotGrid = ({ theme }) => {
     from: {
       opacity: 0
     },
-    opacity: 0.2,
+    opacity: 0.18,
     dimensions: [1920, 1080],
     xy: [0, 0]
   }));
@@ -36,11 +36,11 @@ const DotGrid = ({ theme }) => {
     set({ xy: [e.clientX, e.clientY] })
   );
 
-  const handleMouseDown = e => {};
-
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   });
 
   useEffect(() => {
