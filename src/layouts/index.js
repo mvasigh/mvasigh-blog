@@ -12,7 +12,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '@styles/GlobalStyles';
 import Navbar from '@components/Navbar';
 import DotGrid from '@components/DotGrid';
-import theme from '@styles/theme';
+import { lightTheme, darkTheme } from '@styles';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkTheme}>
         <>
           <GlobalStyles />
           <Navbar siteTitle={data.site.siteMetadata.title} />

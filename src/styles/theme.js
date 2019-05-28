@@ -2,11 +2,11 @@
 // [hue, saturation, luminosity] or...
 // [hue, saturation, luminosity, alpha]
 
-const theme = {
+const baseTheme = {
   palette: {
     greyscale: {
       black: [0, 0, 8],
-      white: [0, 0, 98]
+      white: [0, 0, 94]
     }
   },
   spacing: {
@@ -14,11 +14,30 @@ const theme = {
   }
 };
 
-theme.palette.background = theme.palette.greyscale.white;
-theme.palette.text = {
-  primary: [...theme.palette.greyscale.black, 1],
-  secondary: [...theme.palette.greyscale.black, 0.8]
-};
-theme.spacing.multiple = num => `${num * theme.spacing.unit}rem`;
+baseTheme.spacing.multiple = num => `${num * baseTheme.spacing.unit}rem`;
 
-export default theme;
+export const lightTheme = {
+  ...baseTheme,
+  palette: {
+    ...baseTheme.palette,
+    background: baseTheme.palette.greyscale.white,
+    text: {
+      ...baseTheme.text,
+      primary: [...baseTheme.palette.greyscale.black, 1],
+      secondary: [...baseTheme.palette.greyscale.black, 0.8]
+    }
+  }
+};
+
+export const darkTheme = {
+  ...baseTheme,
+  palette: {
+    ...baseTheme.palette,
+    background: baseTheme.palette.greyscale.black,
+    text: {
+      ...baseTheme.text,
+      primary: [...baseTheme.palette.greyscale.white, 1],
+      secondary: [...baseTheme.palette.greyscale.white, 0.8]
+    }
+  }
+};
