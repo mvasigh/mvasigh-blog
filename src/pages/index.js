@@ -1,8 +1,8 @@
 import React from 'react';
-// import { Layout } from '@components';
+import { Container } from '@components';
 
 const Home = () => {
-  return <span>hello world</span>;
+  return <div />;
 };
 
 export default Home;

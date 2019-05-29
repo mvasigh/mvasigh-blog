@@ -22,7 +22,7 @@ const StyledNavbar = styled.nav`
 `;
 
 const Title = styled.h1`
-  font-size: 2.6rem;
+  font-size: 1.8rem;
   font-weight: 900;
 `;
 

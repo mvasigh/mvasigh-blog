@@ -4,6 +4,9 @@ import { useSpring, animated } from 'react-spring';
 import { throttle } from 'throttle-debounce';
 import { toHslString } from '@libs/color';
 
+// TODO: Discover why react-spring dotgrid performs poorly on Firefox/Safari
+// TODO: Reimplement DotGrid with canvas
+
 const CIRCLE_RADIUS = 600;
 
 const cx = (x, y) => x;

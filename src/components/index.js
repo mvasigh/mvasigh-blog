@@ -1,7 +1,7 @@
 import DotGrid from './DotGrid';
 import Image from './Image';
-import Layout from './Layout';
 import Navbar from './Navbar';
 import SEO from './SEO';
+import Title from './Title';
 
-export { DotGrid, Image, Layout, Navbar, SEO };
+export { DotGrid, Image, Navbar, SEO, Title };

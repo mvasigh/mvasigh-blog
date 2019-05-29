@@ -8,7 +8,7 @@ const StyledMenu = styled.ul`
   list-style-type: none;
   li {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     a {
       text-decoration: none;
