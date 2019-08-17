@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Twitter",
+    "name": "twitter",
+    "href": "https://www.twitter.com"
+  },
+  {
+    "label": "Dev",
+    "name": "dev",
+    "href": "https://www.dev.to"
+  }
+]

@@ -1,9 +1,13 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 const path = require('path');
 
 module.exports = {
   siteMetadata: {
     title: `Mehdi Vasigh`,
-    description: `Software Developer and UI Engineer based out of Houston, TX`,
+    description: `Software Engineer based out of Houston, TX`,
     author: `@mehdi_vasigh`
   },
   plugins: [
@@ -15,6 +19,20 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/articles`
       }
     },
     {
@@ -30,6 +48,8 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
