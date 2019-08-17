@@ -30,7 +30,7 @@ const Layout = ({ children }) => (
         <>
           <GlobalStyles />
           <Navbar siteTitle={data.site.siteMetadata.title} />
-          <DotGrid />
+          {/* <DotGrid /> */}
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

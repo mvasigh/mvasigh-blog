@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles';
-import { Title } from '@components';
+import { Title, Content, ArticleMeta } from '@components';
 
 const Container = styled.div`
   ${media.desktop`
@@ -12,10 +12,12 @@ const Container = styled.div`
   `}
 `;
 
-const Post = () => {
+const Post = ({ pageContext }) => {
   return (
     <Container>
-      <Title>Post title goes here</Title>
+      <Title>{pageContext.title}</Title>
+      <ArticleMeta date={pageContext.date} />
+      <Content dangerouslySetInnerHTML={{ __html: pageContext.html }} />
     </Container>
   );
 };
