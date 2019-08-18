@@ -7,6 +7,7 @@ const baseTheme = {
     greyscale: {
       black: [0, 0, 8],
       darkGrey: [0, 0, 15],
+      lightGrey: [0, 0, 86],
       white: [0, 0, 94]
     },
     code: {
@@ -28,6 +29,7 @@ baseTheme.spacing.multiple = num => `${num * baseTheme.spacing.unit}rem`;
 
 export const lightTheme = {
   ...baseTheme,
+  type: 'light',
   palette: {
     ...baseTheme.palette,
     background: baseTheme.palette.greyscale.white,
@@ -41,6 +43,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   ...baseTheme,
+  type: 'dark',
   palette: {
     ...baseTheme.palette,
     background: baseTheme.palette.greyscale.black,

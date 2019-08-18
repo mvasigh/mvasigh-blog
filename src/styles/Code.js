@@ -57,10 +57,13 @@ const CodeStyles = createGlobalStyle`
 
   /* Inline code */
   :not(pre) > code[class*="language-"] {
+    ${({ theme }) =>
+      theme.type === 'dark'
+        ? ''
+        : `color: ${toHslString(theme.palette.text.primary)};
+           background: ${toHslString(theme.palette.greyscale.lightGrey)};`};
     padding: .15em .2em .05em;
     border-radius: .3em;
-    border: .13em solid hsl(30, 20%, 40%);
-    box-shadow: 1px 1px .3em -.1em black inset;
     white-space: normal;
   }
 

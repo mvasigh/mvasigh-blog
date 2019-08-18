@@ -11,10 +11,15 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', 'Helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Muli', 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-weight: 900;
   }
 
   html {
