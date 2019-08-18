@@ -14,6 +14,13 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  #gatsby-focus-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Muli', 'Montserrat', sans-serif;
   }
