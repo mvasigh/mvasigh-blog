@@ -10,8 +10,9 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '@styles/GlobalStyles';
+import CodeStyles from '@styles/Code';
 import Navbar from '@components/Navbar';
-import DotGrid from '@components/DotGrid';
+// import DotGrid from '@components/DotGrid';
 import { lightTheme, darkTheme } from '@styles';
 
 const Layout = ({ children }) => (
@@ -29,6 +30,7 @@ const Layout = ({ children }) => (
       <ThemeProvider theme={darkTheme}>
         <>
           <GlobalStyles />
+          <CodeStyles />
           <Navbar siteTitle={data.site.siteMetadata.title} />
           {/* <DotGrid /> */}
           <main>{children}</main>

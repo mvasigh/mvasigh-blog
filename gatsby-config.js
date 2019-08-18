@@ -49,7 +49,28 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              prompt: {
+                user: 'root',
+                host: 'localhost',
+                global: false
+              }
+            }
+          }
+        ]
+      }
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

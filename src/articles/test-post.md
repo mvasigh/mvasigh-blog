@@ -1,5 +1,5 @@
 ---
-title: 'Example post with Markdown'
+title: 'Parallel Processing with Web Workers'
 date: '2019-08-17'
 ---
 
@@ -14,6 +14,22 @@ Duis molestie dolor suscipit porttitor tempus. Sed suscipit lorem eu urna viverr
 ### Subheading 2
 
 Vivamus vel justo auctor est venenatis hendrerit consequat at massa. Aliquam semper aliquet viverra. Vivamus bibendum ipsum tristique ultricies volutpat. In vulputate eget ipsum gravida dictum.
+
+```jsx
+import React, { useState } from 'react';
+
+// This is a comment
+const App = () => {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <React.Fragment>
+      <p>The counter is {counter}</p>
+      <button onClick={() => setCounter(counter + 1)}>Increment</button>
+    </React.Fragment>
+  );
+};
+```
 
 ## Section Two
 

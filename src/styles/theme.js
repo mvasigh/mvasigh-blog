@@ -6,7 +6,17 @@ const baseTheme = {
   palette: {
     greyscale: {
       black: [0, 0, 8],
+      darkGrey: [0, 0, 15],
       white: [0, 0, 94]
+    },
+    code: {
+      background: [220, 21, 16],
+      string: [85, 68, 70],
+      tag: [190, 73, 63],
+      variable: [190, 73, 63],
+      method: [40, 100, 75],
+      comment: [211, 11, 41],
+      keyword: [31, 100, 67]
     }
   },
   spacing: {
