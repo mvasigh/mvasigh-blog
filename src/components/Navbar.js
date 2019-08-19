@@ -17,8 +17,8 @@ const StyledNavbar = styled.nav`
   ${media.desktop`
     padding-top: ${({ theme }) => theme.spacing.multiple(3)};
     padding-bottom: ${({ theme }) => theme.spacing.multiple(3)};
-    padding-left: ${({ theme }) => theme.spacing.multiple(6)};
-    padding-right: ${({ theme }) => theme.spacing.multiple(6)};
+    padding-left: ${({ theme }) => theme.spacing.multiple(4)};
+    padding-right: ${({ theme }) => theme.spacing.multiple(4)};
   `}
 `;
 

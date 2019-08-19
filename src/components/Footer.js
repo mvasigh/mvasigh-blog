@@ -14,7 +14,7 @@ const SocialLinkStyles = styled.ul`
     &:not(:first-child) {
       margin-left: ${({ theme }) => theme.spacing.multiple(0.5)};
       &::before {
-        content: '◆';
+        content: '■';
         margin-right: ${({ theme }) => theme.spacing.multiple(0.5)};
       }
     }
@@ -36,10 +36,6 @@ const Footer = () => {
       }
     }
   `);
-
-  const socialLinks = data.allSocialJson.edges.reduce((acc, edge) => {
-    const { node } = edge;
-  });
 
   return (
     <FooterStyles>
