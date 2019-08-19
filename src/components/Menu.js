@@ -34,9 +34,6 @@ const Menu = () => {
       <MenuStyles.Item>
         <Link to="/articles">Articles</Link>
       </MenuStyles.Item>
-      <MenuStyles.Item>
-        <Link to="page-2">Page 3</Link>
-      </MenuStyles.Item>
     </MenuStyles>
   );
 };
