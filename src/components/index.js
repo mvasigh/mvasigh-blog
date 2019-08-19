@@ -7,6 +7,7 @@ import Content from './Content';
 import Article from './Article';
 import Footer from './Footer';
 import Container from './Container';
+import GeometricBackground from './GeometricBackground';
 
 export {
   DotGrid,
@@ -17,5 +18,6 @@ export {
   Content,
   Footer,
   Article,
-  Container
+  Container,
+  GeometricBackground
 };
