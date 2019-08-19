@@ -15,6 +15,8 @@ import { Navbar, Footer, Container } from '@components';
 // import DotGrid from '@components/DotGrid';
 import { lightTheme, darkTheme } from '@styles';
 
+// Dot Grid idea is too distracting :(
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

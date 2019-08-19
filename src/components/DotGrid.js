@@ -19,7 +19,7 @@ const StyledSvg = styled(animated.svg)`
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 `;
@@ -30,7 +30,7 @@ const DotGrid = ({ theme }) => {
     from: {
       opacity: 0
     },
-    opacity: 0.18,
+    opacity: 0.12,
     dimensions: [1920, 1080],
     xy: [0, 0]
   }));
