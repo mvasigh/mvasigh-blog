@@ -48,7 +48,7 @@ const Footer = () => {
         {data.allSocialJson.edges.map(edge => {
           const { node } = edge;
           return (
-            <li key={node.name}>
+            <li key={node.href}>
               <a href={node.href} title={node.name}>
                 {node.label}
               </a>

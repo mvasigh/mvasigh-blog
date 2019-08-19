@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { media } from '@styles';
 import Menu from './Menu';
 
@@ -24,12 +25,20 @@ const StyledNavbar = styled.nav`
 const Title = styled.h1`
   font-size: 1.8rem;
   font-weight: 900;
+  a,
+  a:active,
+  a:visited {
+    font-family: inherit;
+    text-decoration: none;
+  }
 `;
 
 const Navbar = ({ siteTitle }) => {
   return (
     <StyledNavbar>
-      <Title className="grow">{siteTitle}</Title>
+      <Title className="grow">
+        <Link to="/">{siteTitle}</Link>
+      </Title>
       <Menu />
     </StyledNavbar>
   );

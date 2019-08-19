@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container } from '@components';
 
 const Home = () => {
-  return <div />;
+  return (
+    <>
+      <h2>Home Page</h2>
+    </>
+  );
 };
 
 export default Home;

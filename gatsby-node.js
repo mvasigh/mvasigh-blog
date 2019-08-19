@@ -18,7 +18,7 @@ exports.createPages = async ({
           node {
             frontmatter {
               title
-              date
+              date(fromNow: true)
             }
             fields {
               slug

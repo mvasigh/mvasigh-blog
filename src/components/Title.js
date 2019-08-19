@@ -5,4 +5,9 @@ const Title = styled.h1`
   font-weight: 900;
 `;
 
+Title.Secondary = styled.h2`
+  font-size: 2rem;
+  font-weight: 900;
+`;
+
 export default Title;

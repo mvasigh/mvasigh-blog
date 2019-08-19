@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import SEO from './SEO';
 import Title from './Title';
 import Content from './Content';
-import ArticleMeta from './ArticleMeta';
+import Article from './Article';
 import Footer from './Footer';
 import Container from './Container';
 
@@ -16,6 +16,6 @@ export {
   Title,
   Content,
   Footer,
-  ArticleMeta,
+  Article,
   Container
 };

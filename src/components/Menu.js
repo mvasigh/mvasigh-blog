@@ -2,36 +2,42 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-// TODO: add transitions for menu items with useTransition
-
-const StyledMenu = styled.ul`
+const MenuStyles = styled.ul`
   list-style-type: none;
-  li {
+`;
+
+MenuStyles.Item = styled.li`
+  display: inline-block;
+  font-size: 1rem;
+
+  a {
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    padding: 0.4rem 0.8rem;
+    height: 100%;
+    width: 100%;
     display: inline-block;
-    font-size: 1rem;
+    text-decoration: none;
+  }
 
-    a {
-      text-decoration: none;
-    }
-
-    &:not(:last-child) {
-      margin-right: ${({ theme }) => theme.spacing.multiple(4)};
-    }
+  &:not(:last-child) {
+    margin-right: ${({ theme }) => theme.spacing.multiple(3)};
   }
 `;
+
 const Menu = () => {
   return (
-    <StyledMenu>
-      <li>
+    <MenuStyles>
+      <MenuStyles.Item>
         <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="page-2">Page 2</Link>
-      </li>
-      <li>
+      </MenuStyles.Item>
+      <MenuStyles.Item>
+        <Link to="/articles">Articles</Link>
+      </MenuStyles.Item>
+      <MenuStyles.Item>
         <Link to="page-2">Page 3</Link>
-      </li>
-    </StyledMenu>
+      </MenuStyles.Item>
+    </MenuStyles>
   );
 };
 
