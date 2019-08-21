@@ -21,16 +21,13 @@ MenuStyles.Item = styled.li`
   }
 
   &:not(:last-child) {
-    margin-right: ${({ theme }) => theme.spacing.multiple(3)};
+    margin-right: ${({ theme }) => theme.spacing.multiple(1)};
   }
 `;
 
 const Menu = () => {
   return (
     <MenuStyles>
-      <MenuStyles.Item>
-        <Link to="/">Home</Link>
-      </MenuStyles.Item>
       <MenuStyles.Item>
         <Link to="/articles">Articles</Link>
       </MenuStyles.Item>

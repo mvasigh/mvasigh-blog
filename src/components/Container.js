@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import { media } from '@styles';
 
-const Container = styled.main`
-  flex-grow: 1;
+const Container = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: ${({ theme }) => theme.spacing.multiple(2)};
+  padding-right: ${({ theme }) => theme.spacing.multiple(2)};
   ${media.desktop`
-    padding-top: ${({ theme }) => theme.spacing.multiple(3)};
-    padding-bottom: ${({ theme }) => theme.spacing.multiple(3)};
+    padding-left: ${({ theme }) => theme.spacing.multiple(6)};
+    padding-right: ${({ theme }) => theme.spacing.multiple(6)};
+  `}
+  ${media.tablet`
     padding-left: ${({ theme }) => theme.spacing.multiple(6)};
     padding-right: ${({ theme }) => theme.spacing.multiple(6)};
   `}

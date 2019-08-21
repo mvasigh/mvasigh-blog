@@ -3,12 +3,6 @@ import { toHslString } from '@libs/color';
 import 'typeface-ubuntu-mono';
 
 const CodeStyles = createGlobalStyle`
-  /**
-  * prism.js Dark theme for JavaScript, CSS and HTML
-  * Based on the slides of the talk “/Reg(exp){2}lained/”
-  * @author Lea Verou
-  */
-
   code[class*="language-"],
   pre[class*="language-"] {
     color: white;

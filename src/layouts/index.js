@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '@styles/GlobalStyles';
 import CodeStyles from '@styles/Code';
-import { Navbar, Footer, Container } from '@components';
+import { Navbar, Footer, Container, Main } from '@components';
 // import DotGrid from '@components/DotGrid';
 import { lightTheme, darkTheme } from '@styles';
 
@@ -35,7 +35,9 @@ const Layout = ({ children }) => (
           <CodeStyles />
           <Navbar siteTitle={data.site.siteMetadata.title} />
           {/* <DotGrid /> */}
-          <Container>{children}</Container>
+          <Main>
+            <Container>{children}</Container>
+          </Main>
           <Footer />
         </>
       </ThemeProvider>

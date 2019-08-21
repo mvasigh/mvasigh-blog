@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '@styles';
 
 const Content = styled.section`
   h2,
@@ -11,15 +12,24 @@ const Content = styled.section`
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    ${media.tablet`
+      font-size: 2rem;
+    `}
   }
 
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    ${media.tablet`
+      font-size: 1.4rem;
+    `}
   }
 
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    ${media.tablet`
+      font-size: 1.2rem;
+    `}
   }
 
   p {
