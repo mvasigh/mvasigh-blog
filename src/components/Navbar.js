@@ -73,8 +73,14 @@ const Title = styled.h1`
 `;
 
 function useIntersection(selector, callback = () => {}, options = {}) {
-  const observer = useRef(new IntersectionObserver(callback, options));
+  const observer = useRef();
   useEffect(() => {
+    if (observer.current instanceof IntersectionObserver) return;
+    observer.current = new IntersectionObserver(callback, options);
+  }, []);
+
+  useEffect(() => {
+    if (!observer.current instanceof IntersectionObserver) return;
     const targets = document.querySelectorAll(selector);
     for (let target of targets) {
       observer.current.observe(target);
