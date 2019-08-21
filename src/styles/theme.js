@@ -50,7 +50,7 @@ export const darkTheme = {
     text: {
       ...baseTheme.text,
       primary: [...baseTheme.palette.greyscale.white, 1],
-      secondary: [...baseTheme.palette.greyscale.white, 0.8]
+      secondary: [...baseTheme.palette.greyscale.white, 0.7]
     }
   }
 };

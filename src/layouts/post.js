@@ -6,7 +6,7 @@ const Post = ({ pageContext }) => {
     <Article>
       <Article.Header>
         <Title>{pageContext.title}</Title>
-        <Article.Meta date={pageContext.date} />
+        <Article.Meta>{pageContext.date}</Article.Meta>
       </Article.Header>
       <Content dangerouslySetInnerHTML={{ __html: pageContext.html }} />
     </Article>

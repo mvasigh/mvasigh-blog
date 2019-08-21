@@ -8,6 +8,7 @@ const Articles = () => {
       allMarkdownRemark {
         edges {
           node {
+            id
             excerpt(pruneLength: 340, format: PLAIN, truncate: true)
             fields {
               slug
@@ -27,7 +28,7 @@ const Articles = () => {
       {data.allMarkdownRemark.edges.map(edge => {
         const { node } = edge;
         return (
-          <Article>
+          <Article key={node.id}>
             <Article.Header>
               <Title.Secondary>
                 <Link to={`/articles/${node.fields.slug}`}>
@@ -36,7 +37,9 @@ const Articles = () => {
               </Title.Secondary>
               <Article.Meta date={node.frontmatter.date} />
             </Article.Header>
-            <Article.Excerpt>{node.excerpt}</Article.Excerpt>
+            <Article.Excerpt href={`/articles/${node.fields.slug}`}>
+              {node.excerpt}
+            </Article.Excerpt>
           </Article>
         );
       })}
