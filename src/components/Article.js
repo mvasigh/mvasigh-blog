@@ -20,7 +20,7 @@ const ArticleExcerptStyles = styled.p`
   margin-bottom: ${({ theme }) => theme.spacing.multiple(2)};
 
   a {
-    margin-left: 0.2rem;
+    margin-left: 0.2em;
   }
 `;
 

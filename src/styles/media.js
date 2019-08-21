@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
 
 const sizes = {
+  widescreen: 1440,
   desktop: 992,
   tablet: 768,
-  phone: 576
+  phone: 410
 };
 
 // Iterate through the sizes and create a media template

@@ -10,6 +10,12 @@ const baseTheme = {
       lightGrey: [0, 0, 86],
       white: [0, 0, 94]
     },
+    brand: {
+      veryDarkBrown: [55, 55, 8],
+      darkBrown: [45, 67, 8],
+      brown: [18, 32, 29],
+      orange: [14, 90, 68]
+    },
     code: {
       background: [220, 21, 16],
       string: [85, 68, 70],
@@ -25,7 +31,7 @@ const baseTheme = {
   }
 };
 
-baseTheme.spacing.multiple = num => `${num * baseTheme.spacing.unit}rem`;
+baseTheme.spacing.multiple = num => `${num * baseTheme.spacing.unit}em`;
 
 export const lightTheme = {
   ...baseTheme,

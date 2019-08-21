@@ -33,6 +33,10 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => toHslString(theme.palette.background)};
     color: ${({ theme }) => toHslaString(theme.palette.text.primary)};
   }
+
+  body {
+    font-size: 16px;
+  }
   
   a,
   a:visited,

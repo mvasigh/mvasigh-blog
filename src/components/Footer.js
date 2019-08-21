@@ -2,22 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FaTwitter, FaDev, FaGithub, FaLinkedin, FaLink } from 'react-icons/fa';
+import { media } from '@styles';
 
 const FooterStyles = styled.footer`
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.multiple(2)};
+  padding: ${({ theme }) => theme.spacing.multiple(1)};
+  ${media.tablet`
+    padding: ${({ theme }) => theme.spacing.multiple(2)};
+  `}
 `;
 
 const SocialLinkStyles = styled.ul`
   list-style-type: none;
-  padding: ${({ theme }) => theme.spacing.multiple(1)};
   li {
-    font-size: 2rem;
+    font-size: 1.4em;
+    ${media.tablet`
+      font-size: 2em;
+    `}
     &:not(:first-child) {
       margin-left: ${({ theme }) => theme.spacing.multiple(1)};
     }
     display: inline-block;
   }
+`;
+
+const Divider = styled.hr`
+  margin-bottom: ${({ theme }) => theme.spacing.multiple(1)};
 `;
 
 const socialIcons = {
@@ -47,7 +57,7 @@ const Footer = () => {
 
   return (
     <FooterStyles>
-      <hr />
+      <Divider />
       <SocialLinkStyles>
         {socials.map(social => {
           const Icon = socialIcons[social.name] || FaLink;

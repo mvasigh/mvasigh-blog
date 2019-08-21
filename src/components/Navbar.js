@@ -1,49 +1,51 @@
 import React, { useRef, useEffect, useState } from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled, { css, withTheme } from 'styled-components';
 import { Link } from 'gatsby';
 import { media } from '@styles';
 import Menu from './Menu';
 import Container from './Container';
-import { toHslaString, toHslString } from '@libs/color';
+import { toHslaString } from '@libs/color';
+import { debounce } from 'throttle-debounce';
 
 const StyledNavbar = styled.nav.attrs(props => {
   const { palette, type } = props.theme;
-  const bgColor =
-    type === 'dark' ? palette.greyscale.black : palette.greyscale.white;
+  const bgColor = palette.background;
   const forceDark = type !== 'dark' && props.isDark;
-  return { bgColor, forceDark };
+  return {
+    background: forceDark
+      ? css`
+          opacity: 0;
+          ${media.widescreen`
+            opacity: 1;
+          `}
+        `
+      : css`
+          opacity: 1;
+          background-image: linear-gradient(
+            to bottom,
+            ${toHslaString([...bgColor, 1])},
+            ${toHslaString([...bgColor, 0.9])},
+            70%,
+            ${toHslaString([...bgColor, 0])}
+          );
+          ${media.widescreen`
+            background-image: none;
+          `}
+        `
+  };
 })`
+  ${props => props.background}
   position: fixed;
-  ${props =>
-    !props.forceDark
-      ? `
-  opacity: 1;
-  background-image: linear-gradient(
-    to bottom,
-    ${toHslaString([...props.bgColor, 1])},
-    ${toHslaString([...props.bgColor, 0.9])}, 70%,
-    ${toHslaString([...props.bgColor, 0])}
-  );
-  `
-      : `
-  opacity: 0;
-  `}
-
   top: 0;
   z-index: 99;
-  transition: all 0.3s;
+  transition: ease 0.4s;
   width: 100%;
   padding-top: ${({ theme }) => theme.spacing.multiple(1)};
   padding-bottom: ${({ theme }) => theme.spacing.multiple(1)};
-  ${media.desktop`
-    padding-top: ${({ theme }) => theme.spacing.multiple(1)};
-    padding-bottom: ${({ theme }) => theme.spacing.multiple(1)};
+  ${media.widescreen`
+    padding-top: ${({ theme }) => theme.spacing.multiple(2)};
+    padding-bottom: ${({ theme }) => theme.spacing.multiple(2)};
   `}
-  ${media.tablet`
-    padding-top: ${({ theme }) => theme.spacing.multiple(1)};
-    padding-bottom: ${({ theme }) => theme.spacing.multiple(1)};
-  `}
-
   .grow {
     flex-grow: 1;
   }
@@ -57,9 +59,9 @@ StyledNavbar.Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.2rem;
+  font-size: 1.3em;
   ${media.tablet`
-    font-size: 1.7rem;
+    font-size: 1.7em;
   `}
   font-weight: 900;
   a,
@@ -87,7 +89,7 @@ function useIntersection(selector, callback = () => {}, options = {}) {
 
 const Navbar = ({ siteTitle, theme }) => {
   const [isDark, setDark] = useState(false);
-  const handleIntersection = entries => {
+  const handleIntersection = debounce(100, entries => {
     if (theme.type === 'dark') return;
     for (let entry of entries) {
       if (entry.isIntersecting) {
@@ -95,9 +97,9 @@ const Navbar = ({ siteTitle, theme }) => {
       }
     }
     return setDark(false);
-  };
+  });
   useIntersection('pre', handleIntersection, {
-    rootMargin: '0% 0% -85% 0%'
+    rootMargin: '20% 0% -85% 0%'
   });
 
   return (

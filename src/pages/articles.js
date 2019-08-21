@@ -35,7 +35,7 @@ const Articles = () => {
                   {node.frontmatter.title}
                 </Link>
               </Title.Secondary>
-              <Article.Meta date={node.frontmatter.date} />
+              <Article.Meta>{node.frontmatter.date}</Article.Meta>
             </Article.Header>
             <Article.Excerpt href={`/articles/${node.fields.slug}`}>
               {node.excerpt}

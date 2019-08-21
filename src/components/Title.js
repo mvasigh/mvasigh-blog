@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { media } from '@styles';
 
 const Title = styled.h1`
-  font-size: 2.2rem;
-  margin-bottom: ${({ theme }) => theme.spacing.multiple(0.5)};
+  font-size: 2.2em;
+  margin-bottom: ${({ theme }) => theme.spacing.multiple(0.25)};
   ${media.tablet`
-    margin-bottom: ${({ theme }) => theme.spacing.multiple(0.5)};
-    font-size: 2.8rem;
+    margin-bottom: ${({ theme }) => theme.spacing.multiple(0.25)};
+    font-size: 2.8em;
   `}
   font-weight: 900;
   line-height: 1.2;
@@ -18,9 +18,11 @@ const Title = styled.h1`
 `;
 
 Title.Secondary = styled.h2`
-  font-size: 1.6rem;
+  font-size: 1.6em;
+  margin-bottom: ${({ theme }) => theme.spacing.multiple(0.25)};
   ${media.tablet`
-    font-size: 2rem;
+    font-size: 2em;
+    margin-bottom: ${({ theme }) => theme.spacing.multiple(0.25)};
   `}
   font-weight: 900;
 

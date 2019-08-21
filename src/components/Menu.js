@@ -8,12 +8,12 @@ const MenuStyles = styled.ul`
 
 MenuStyles.Item = styled.li`
   display: inline-block;
-  font-size: 1rem;
+  font-size: 1em;
 
   a {
     font-family: 'Muli', sans-serif;
     font-weight: 700;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4em 0.8em;
     height: 100%;
     width: 100%;
     display: inline-block;
