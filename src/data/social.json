@@ -1,22 +1,26 @@
 [
   {
     "label": "Twitter",
-    "name": "@mehdi_vasigh",
+    "name": "twitter",
+    "handle": "@mehdi_vasigh",
     "href": "https://twitter.com/mehdi_vasigh"
   },
   {
     "label": "Github",
-    "name": "@mvasigh",
+    "name": "github",
+    "handle": "@mvasigh",
     "href": "https://github.com/mvasigh"
   },
   {
     "label": "DEV",
-    "name": "@mvasigh",
+    "name": "dev",
+    "handle": "@mvasigh",
     "href": "https://dev.to/mvasigh"
   },
   {
     "label": "LinkedIn",
-    "name": "@mehdi-vasigh",
+    "name": "linkedin",
+    "handle": "@mehdi-vasigh",
     "href": "https://www.linkedin.com/in/mehdi-vasigh/"
   }
 ]

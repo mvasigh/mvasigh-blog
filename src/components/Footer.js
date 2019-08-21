@@ -1,26 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
+import { FaTwitter, FaDev, FaGithub, FaLinkedin, FaLink } from 'react-icons/fa';
 
 const FooterStyles = styled.footer`
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.multiple(3)};
+  padding: ${({ theme }) => theme.spacing.multiple(2)};
 `;
 
 const SocialLinkStyles = styled.ul`
   list-style-type: none;
   padding: ${({ theme }) => theme.spacing.multiple(1)};
   li {
+    font-size: 2rem;
     &:not(:first-child) {
-      margin-left: ${({ theme }) => theme.spacing.multiple(0.5)};
-      &::before {
-        content: '■';
-        margin-right: ${({ theme }) => theme.spacing.multiple(0.5)};
-      }
+      margin-left: ${({ theme }) => theme.spacing.multiple(1)};
     }
     display: inline-block;
   }
 `;
+
+const socialIcons = {
+  twitter: FaTwitter,
+  dev: FaDev,
+  github: FaGithub,
+  linkedin: FaLinkedin
+};
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -29,6 +34,7 @@ const Footer = () => {
         edges {
           node {
             name
+            handle
             label
             href
           }
@@ -37,16 +43,21 @@ const Footer = () => {
     }
   `);
 
+  const socials = data.allSocialJson.edges.map(edge => edge.node);
+
   return (
     <FooterStyles>
       <hr />
       <SocialLinkStyles>
-        {data.allSocialJson.edges.map(edge => {
-          const { node } = edge;
+        {socials.map(social => {
+          const Icon = socialIcons[social.name] || FaLink;
           return (
-            <li key={node.href}>
-              <a href={node.href} title={node.name}>
-                {node.label}
+            <li key={social.href}>
+              <a
+                href={social.href}
+                title={`${social.handle} on ${social.label}`}
+              >
+                <Icon></Icon>
               </a>
             </li>
           );
