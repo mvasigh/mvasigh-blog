@@ -5,7 +5,6 @@ import { media } from '@styles';
 import Menu from './Menu';
 import Container from './Container';
 import { toHslaString } from '@libs/color';
-import { debounce } from 'throttle-debounce';
 
 const StyledNavbar = styled.nav.attrs(props => {
   const { palette, type } = props.theme;
@@ -25,7 +24,7 @@ const StyledNavbar = styled.nav.attrs(props => {
             to bottom,
             ${toHslaString([...bgColor, 1])},
             ${toHslaString([...bgColor, 0.9])},
-            70%,
+            80%,
             ${toHslaString([...bgColor, 0])}
           );
           ${media.widescreen`
@@ -41,7 +40,7 @@ const StyledNavbar = styled.nav.attrs(props => {
   transition: ease 0.4s;
   width: 100%;
   padding-top: ${({ theme }) => theme.spacing.multiple(1)};
-  padding-bottom: ${({ theme }) => theme.spacing.multiple(1)};
+  padding-bottom: ${({ theme }) => theme.spacing.multiple(2)};
   ${media.widescreen`
     padding-top: ${({ theme }) => theme.spacing.multiple(2)};
     padding-bottom: ${({ theme }) => theme.spacing.multiple(2)};
@@ -95,17 +94,24 @@ function useIntersection(selector, callback = () => {}, options = {}) {
 
 const Navbar = ({ siteTitle, theme }) => {
   const [isDark, setDark] = useState(false);
-  const handleIntersection = debounce(100, entries => {
+  const entries = useRef();
+  const handleIntersection = intersections => {
     if (theme.type === 'dark') return;
-    for (let entry of entries) {
+    if (!entries.current) {
+      entries.current = new Map();
+    }
+    for (let entry of intersections) {
+      entries.current.set(entry.target, entry);
+    }
+    for (let entry of entries.current.values()) {
       if (entry.isIntersecting) {
         return setDark(true);
       }
     }
     return setDark(false);
-  });
+  };
   useIntersection('pre', handleIntersection, {
-    rootMargin: '20% 0% -85% 0%'
+    rootMargin: '30% 0% -60% 0%'
   });
 
   return (

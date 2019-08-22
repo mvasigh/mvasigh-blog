@@ -7,10 +7,6 @@ const Container = styled.div`
   margin: 0 auto;
   padding-left: ${({ theme }) => theme.spacing.multiple(1)};
   padding-right: ${({ theme }) => theme.spacing.multiple(1)};
-  ${media.phone`
-    padding-left: ${({ theme }) => theme.spacing.multiple(2)};
-    padding-right: ${({ theme }) => theme.spacing.multiple(2)};
-  `}
   ${media.desktop`
     padding-left: ${({ theme }) => theme.spacing.multiple(6)};
     padding-right: ${({ theme }) => theme.spacing.multiple(6)};

@@ -45,7 +45,16 @@ const Content = styled.section`
     ${media.phone`
       font-size: 1.1em;
     `}
-    line-height: 1.6em;
+    line-height: 1.8em;
+  }
+
+  pre {
+    margin-left: ${({ theme }) => theme.spacing.multiple(-1)};
+    margin-right: ${({ theme }) => theme.spacing.multiple(-1)};
+    ${media.tablet`
+      margin-left: 0;
+      margin-right: 0;
+    `}
   }
 `;
 

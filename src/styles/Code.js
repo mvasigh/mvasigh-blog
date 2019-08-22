@@ -44,7 +44,7 @@ const CodeStyles = createGlobalStyle`
   /* Code blocks */
   pre[class*="language-"] {
     padding: 1em;
-    margin: 2.2em 0;
+    margin: ${({ theme }) => theme.spacing.multiple(1.5)} 0;
     overflow: auto;
     /* border-radius: 0.2em; */
   }
