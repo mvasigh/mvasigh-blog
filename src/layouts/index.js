@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={darkTheme}>
         <>
           <GlobalStyles />
           <CodeStyles />
