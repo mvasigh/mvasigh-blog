@@ -11,10 +11,10 @@ const baseTheme = {
       white: [0, 0, 94]
     },
     brand: {
-      veryDarkBrown: [55, 55, 8],
-      darkBrown: [45, 67, 8],
-      brown: [18, 32, 29],
-      orange: [14, 90, 68]
+      lightSalmon: [17, 100, 74],
+      lighterSalmon: [21, 95, 85],
+      darkGrey: [198, 30, 18],
+      lightGrey: [24, 22, 95]
     },
     code: {
       background: [220, 21, 16],
@@ -52,11 +52,11 @@ export const darkTheme = {
   type: 'dark',
   palette: {
     ...baseTheme.palette,
-    background: baseTheme.palette.greyscale.black,
+    background: baseTheme.palette.brand.darkGrey,
     text: {
       ...baseTheme.text,
-      primary: [...baseTheme.palette.greyscale.white, 1],
-      secondary: [...baseTheme.palette.greyscale.white, 0.7]
+      primary: [...baseTheme.palette.brand.lightGrey, 1],
+      secondary: [...baseTheme.palette.brand.lighterSalmon, 0.7]
     }
   }
 };

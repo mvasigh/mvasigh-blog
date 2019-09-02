@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { media } from '@styles';
+import { toHslString } from '@libs/color';
 
 const Content = styled.section`
   h2 {
+    color: ${({ theme }) => toHslString(theme.palette.brand.lighterSalmon)};
     margin-bottom: ${({ theme }) => theme.spacing.multiple(0.5)};
   }
   h3 {
+    color: ${({ theme }) => toHslString(theme.palette.brand.lighterSalmon)};
     margin-bottom: ${({ theme }) => theme.spacing.multiple(0.7)};
   }
 
