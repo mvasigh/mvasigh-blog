@@ -1,7 +1,7 @@
 ---
 title: 'Using Web Workers with Create React App'
 date: '2019-08-21'
-published: false
+published: true
 ---
 
 ## Setting up your project

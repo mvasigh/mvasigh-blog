@@ -16,6 +16,7 @@ const Articles = () => {
             frontmatter {
               title
               date(fromNow: true)
+              published
             }
           }
         }
@@ -23,9 +24,13 @@ const Articles = () => {
     }
   `);
 
+  const publishedNodes = data.allMarkdownRemark.edges.filter(
+    edge => edge.node.frontmatter.published === true
+  );
+
   return (
     <>
-      {data.allMarkdownRemark.edges.map(edge => {
+      {publishedNodes.map(edge => {
         const { node } = edge;
         return (
           <Article key={node.id}>
