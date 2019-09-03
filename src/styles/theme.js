@@ -12,6 +12,8 @@ const baseTheme = {
     },
     brand: {
       lightSalmon: [17, 100, 74],
+      mintCream: [15, 100, 98],
+      paleGreen: [120, 92.5, 79],
       lighterSalmon: [21, 95, 85],
       darkGrey: [198, 30, 18],
       lightGrey: [24, 22, 95]
@@ -56,7 +58,7 @@ export const darkTheme = {
     text: {
       ...baseTheme.text,
       primary: [...baseTheme.palette.brand.lightGrey, 1],
-      secondary: [...baseTheme.palette.brand.lighterSalmon, 0.7]
+      secondary: [...baseTheme.palette.brand.mintCream, 0.7]
     }
   }
 };

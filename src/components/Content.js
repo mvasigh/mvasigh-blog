@@ -4,11 +4,11 @@ import { toHslString } from '@libs/color';
 
 const Content = styled.section`
   h2 {
-    color: ${({ theme }) => toHslString(theme.palette.brand.lighterSalmon)};
+    color: ${({ theme }) => toHslString(theme.palette.brand.paleGreen)};
     margin-bottom: ${({ theme }) => theme.spacing.multiple(0.5)};
   }
   h3 {
-    color: ${({ theme }) => toHslString(theme.palette.brand.lighterSalmon)};
+    color: ${({ theme }) => toHslString(theme.palette.brand.paleGreen)};
     margin-bottom: ${({ theme }) => theme.spacing.multiple(0.7)};
   }
 

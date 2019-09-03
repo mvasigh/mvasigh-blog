@@ -3,7 +3,7 @@ import { media } from '@styles';
 import { toHslString } from '@libs/color';
 
 const Title = styled.h1`
-  color: ${({ theme }) => toHslString(theme.palette.brand.lightSalmon)};
+  color: ${({ theme }) => toHslString(theme.palette.brand.mintCream)};
   font-size: 2.2em;
   margin-bottom: ${({ theme }) => theme.spacing.multiple(0.25)};
   ${media.tablet`
@@ -29,7 +29,7 @@ Title.Secondary = styled.h2`
   font-weight: 900;
 
   a {
-    color: ${({ theme }) => toHslString(theme.palette.brand.lightSalmon)};
+    color: ${({ theme }) => toHslString(theme.palette.brand.mintCream)};
     font-family: 'Muli', sans-serif;
     text-decoration: none;
   }
