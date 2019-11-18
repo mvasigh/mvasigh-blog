@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  html > * {
+    transition: all 0.2s ease;
+  }
+
   #gatsby-focus-wrapper {
     min-height: 100vh;
     display: flex;
@@ -40,7 +44,8 @@ const GlobalStyles = createGlobalStyle`
   
   a,
   a:visited,
-  a:active { 
+  a:active {
+    transition: all 0.2s ease;
     color: ${({ theme }) => toHslaString(theme.palette.text.primary)};
   }
 `;
