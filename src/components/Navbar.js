@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { media } from '@styles';
 import Menu from './Menu';
 import Container from './Container';
+import Button from './Button';
 import { toHslaString } from '@libs/color';
 
 const StyledNavbar = styled.nav.attrs(props => {
@@ -92,7 +93,7 @@ function useIntersection(selector, callback = () => {}, options = {}) {
   });
 }
 
-const Navbar = ({ siteTitle, theme }) => {
+const Navbar = ({ siteTitle, showBackButton, theme, ...props }) => {
   const [isDark, setDark] = useState(false);
   const entries = useRef();
   const handleIntersection = intersections => {
@@ -118,9 +119,15 @@ const Navbar = ({ siteTitle, theme }) => {
     <StyledNavbar isDark={isDark}>
       <Container>
         <StyledNavbar.Content>
-          <Title className="grow">
-            <Link to="/">{siteTitle}</Link>
-          </Title>
+          {showBackButton ? (
+            <Button as="a" href="#" onClick={() => window.history.go(-1)}>
+              &larr; Back
+            </Button>
+          ) : (
+            <Title className="grow">
+              <Link to="/">{siteTitle}</Link>
+            </Title>
+          )}
           <Menu />
         </StyledNavbar.Content>
       </Container>

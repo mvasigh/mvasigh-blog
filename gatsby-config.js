@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Mehdi Vasigh`,
+    title: `mvasigh.dev`,
     description: `Software Engineer based out of Houston, TX`,
     author: `@mehdi_vasigh`
   },
