@@ -25,11 +25,12 @@ MenuStyles.Item = styled.li`
   }
 `;
 
+// TODO: add social links to navbar
 const Menu = () => {
   return (
     <MenuStyles>
       <MenuStyles.Item>
-        <Link to="/articles">Articles</Link>
+        {/* <Link to="/articles">Articles</Link> */}
       </MenuStyles.Item>
     </MenuStyles>
   );

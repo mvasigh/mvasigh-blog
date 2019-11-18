@@ -59,10 +59,10 @@ StyledNavbar.Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.3em;
+  font-size: 1.3rem !important;
   text-transform: none !important;
   ${media.tablet`
-    font-size: 1.7em;
+    font-size: 1.7rem !important;
   `}
   font-weight: 900;
   a,
