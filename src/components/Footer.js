@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FaTwitter, FaDev, FaGithub, FaLinkedin, FaLink } from 'react-icons/fa';
 import { media } from '@styles';
+import { toHslString } from '../libs/color';
 
 const FooterStyles = styled.footer`
   margin: 0 auto;
@@ -27,6 +28,8 @@ const SocialLinkStyles = styled.ul`
 `;
 
 const Divider = styled.hr`
+  height: 0.2rem;
+  background: ${({ theme }) => toHslString(theme.palette.greyscale.white)};
   margin-bottom: ${({ theme }) => theme.spacing.multiple(1)};
 `;
 

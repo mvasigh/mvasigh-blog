@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 const MenuStyles = styled.ul`
   list-style-type: none;
@@ -25,11 +24,12 @@ MenuStyles.Item = styled.li`
   }
 `;
 
+// TODO: add social links to navbar
 const Menu = () => {
   return (
     <MenuStyles>
       <MenuStyles.Item>
-        <Link to="/articles">Articles</Link>
+        {/* <Link to="/articles">Articles</Link> */}
       </MenuStyles.Item>
     </MenuStyles>
   );
