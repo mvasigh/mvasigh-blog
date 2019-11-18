@@ -13,11 +13,12 @@ Article.Meta = styled.p`
 `;
 
 Article.Header = styled.header`
-  margin-bottom: ${({ theme }) => theme.spacing.multiple(2)};
+  margin-bottom: ${({ theme }) => theme.spacing.multiple(1)};
 `;
 
 const ArticleExcerptStyles = styled.p`
   margin-bottom: ${({ theme }) => theme.spacing.multiple(2)};
+  line-height: 1.8em;
 
   a {
     margin-left: 0.2em;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { toRgbString, toHslString } from '../libs/color';
 
@@ -48,6 +49,9 @@ const StyledButton = styled.button`
 const StyledA = styled.a`
   ${buttonStyles}
 `;
+const StyledLink = styled(Link)`
+  ${buttonStyles}
+`;
 
 const Button = ({ children, ...props }) => {
   const BtnComponent = props.as || 'button';
@@ -57,6 +61,8 @@ const Button = ({ children, ...props }) => {
       return <StyledButton {...props}>{children}</StyledButton>;
     case 'a':
       return <StyledA {...props}>{children}</StyledA>;
+    case Link:
+      return <StyledLink {...props}>{children}</StyledLink>;
     default:
       return <BtnComponent {...props}>{children}</BtnComponent>;
   }
