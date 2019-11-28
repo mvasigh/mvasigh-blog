@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '@styles/GlobalStyles';
 import CodeStyles from '@styles/Code';
-import { Navbar, Footer, Container, Main } from '@components';
+import { Background, Navbar, Footer, Container, Main } from '@components';
 // import DotGrid from '@components/DotGrid';
 import { darkTheme } from '@styles';
 
@@ -24,6 +24,7 @@ const Layout = ({ children, location }) => {
       render={data => (
         <ThemeProvider theme={darkTheme}>
           <>
+            <Background />
             <GlobalStyles />
             <CodeStyles />
             <Navbar
